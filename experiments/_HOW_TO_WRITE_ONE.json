@@ -1,0 +1,51 @@
+{
+  // name of the experiment. it will be also the name of the output folder
+  "name" : "mainZigZag",
+  
+  "dataset": {
+    // dataset selection, it is the name of the dataset file (e.g: 3.json)
+    "num": 3,
+    // uses the small version of the corrispondent (keep false unless you understood where to put the small dataset)
+    "small": false,
+    // equilibrate the number of features for all classes (keep false)
+    "equilib_classes": false,
+    // parameter of equilibration
+    "factor_equilb": 2
+  },
+  
+  "functionality": {
+    // do class statistic estimation (if false it is skipped and loaded from file generated at the previous run)
+    "class_statistics": true,
+    // data fusion execution (keep true)
+    "data_fusion": true,
+    // do bottom up even if has been previously computed (force to recompute the bottom-up)
+    "force_bottom_up": false
+  },
+  
+  "statistic_estimation": {
+    // chose estimetion method:
+  	// "RF" random forest (default)
+  	// "GBRF" gradient boosting
+  	// "extraF" extra trees
+  	// "rotF" rotation forest
+    "method": "GBRF"
+  },
+  
+  "method": {
+    // prabability for the non transition class
+    "theta": 0.82,
+    // chose top-down type:
+    // "SMMRF" SMMRF spiral scan (default)
+  	// "hilZZ" MC simmetrizzata (hilber zig zag scan)
+    "top_down": "hilZZ",
+    // limation of dimension for dataset (keep false if you dont want it)
+    "only_portion": true,
+    "coord": {
+      // coordinates given on the biggest dimension
+      "fx": 250, // from horizontal
+      "tx": 450, // to horizontal
+      "fy": 123, // from vertical
+      "ty": 123 // to vertical
+    }
+  }
+}

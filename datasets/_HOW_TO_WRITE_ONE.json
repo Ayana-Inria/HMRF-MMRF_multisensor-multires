@@ -1,0 +1,57 @@
+{
+  // name of the dataset
+  "name" : "haiti_quick_bird_resampled_in_3_res",
+  // num of resolutions
+  "R" : 3,
+  // num of spectral bands at each resolution for the images
+  "B": [4, 4, 4],
+  // num of bytes per pixel per rosolution
+  "byte_sample_image": [1, 1, 1],
+  // num of bytes per pixel per rosolution
+  "byte_sample_map": 1,
+  // enable to select only some bands, true for haiti, false for Alessandria
+  "selective_bands": true,
+  // for haiti dataser if you cut like this you are keeping only native bands for each sensor
+  "band_to_be_cutted": [
+    [],
+    [0,1,2],
+    [0,1,2,3,4,5,6]
+  ],
+  "data": {
+    // width of the biggest image
+    "W" : 800,
+    // height of the biggest image
+    "H" : 400,
+    // num of classes
+    "C" : 5,
+    // name of the actual images for each resolution for samples, train data and test data
+    "image_path": ["qb.16sep09_800x400_8bpp.raw",
+                  "qb.16sep09_400x200_8bpp.raw",
+                  "qb.16sep09_200x100_8bpp.raw"],
+    "train_path": ["TR_800x400.raw",
+                   "TR_400x200.raw",
+                   "TR_200x100.raw"],
+    "test_path": ["TEST_800x400.raw",
+                  "TEST_400x200.raw",
+                  "TEST_200x100.raw"],
+  },
+  // here another smaller dataset can be identified and used for debugging
+  "small_data": {
+    // width
+    "W" : 256,
+    // height
+    "H" : 336,
+    // num of classes
+    "C" : 4,
+    //relative path to the images and name
+    "image_path": ["small/qb.16sep09_256x336_8bpp.raw",
+                  "small/qb.16sep09_128x168_8bpp.raw",
+                  "small/qb.16sep09_64x84_8bpp.raw"],
+    "train_path": ["small/TR_256x336.raw",
+                   "small/TR_128x168.raw",
+                   "small/TR_64x84.raw"],
+    "test_path": ["small/TEST_256x336.raw",
+                  "small/TEST_128x168.raw",
+                  "small/TEST_64x84.raw"],
+  }
+}
