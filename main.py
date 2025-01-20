@@ -1,10 +1,3 @@
-"""
-    This project has been implemented for the development of the master thesis:
-    `Markov causal models for the classification of multiresolution and multisensor data`
-
-    for any info: ale.montaldo@gmail.com
-"""
-
 from load_utilities import *
 from export_result import *
 from ensemble_estim_on_quadtree import ensemble_estim
